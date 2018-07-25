@@ -1,12 +1,13 @@
 /* eslint-env browser */
 
 module.exports = {
-  homeURL: 'https://decentrex.com',
+  homeURL: 'https://amisolution.github.io/amis-decentrex',
   contractDecentrEx: 'smart_contract/decentrex.sol',
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
-    { addr: '0xbf29685856fae1e228878dfb35b280c0adcc3b05', info: 'Deployed 05/26/2017' },
+    { addr: '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819', info: 'Deployed 02/09/2017 -- THE CURRENT ED SMART CONTRACT' },
+    { addr: '0xbf29685856fae1e228878dfb35b280c0adcc3b05', info: 'DC Deployed 05/26/2017' }
   ],
   ethTestnet: false,
   ethProvider: 'http://localhost:8545',
@@ -19,11 +20,11 @@ module.exports = {
   gasTrade: 250000,
   gasOrder: 250000,
   ordersOnchain: false,
-  apiServer: 'https://api.decentrex.com',
-  userCookie: 'DecentrEx',
-  eventsCacheCookie: 'DecentrEx_eventsCache',
-  deadOrdersCacheCookie: 'DecentrEx_deadOrdersCache',
-  ordersCacheCookie: 'DecentrEx_ordersCache',
+  apiServer: 'https://api.etherdelta.com',
+  userCookie: 'Etherdelta',
+  eventsCacheCookie: 'EtherDelta_eventsCache',
+  deadOrdersCacheCookie: 'EtherDelta_deadOrdersCache',
+  ordersCacheCookie: 'EtherDelta_ordersCache',
   etherscanAPIKey: 'KF9ADFTHP4WJF1GV3WHJZCTFZIN5XZUXG1',
   tokens: [
 { addr: '0x0000000000000000000000000000000000000000', name: 'ETH', decimals: 18 },
@@ -33,7 +34,7 @@ module.exports = {
 { addr: '0x4470bb87d77b963a013db939be332f927f2b992e', name: 'ADX', decimals: 4 },
 { addr: '0x5ca9a71b1d01849c0a95490cc00559717fcf0d1d', name: 'AE', decimals: 18 },
 { addr: '0xa2f4fcb0fde2dd59f7a1873e121bc5623e3164eb', name: 'AIRA', decimals: 0 },
-{ addr: '0x949bEd886c739f1A3273629b3320db0C5024c719', name: 'AMIS', decimals: 9 },    
+{ addr: '0x949bed886c739f1A3273629b3320db0C5024c719', name: 'AMIS', decimals: 9 },    
 { addr: '0x960b236a07cf122663c4303350609a66a7b288c0', name: 'ANT', decimals: 18 },
 { addr: '0xac709fcb44a43c35f0da4e3163b117a17f3770f5', name: 'ARC', decimals: 18 },
 { addr: '0xfec0cf7fe078a500abf15f1284958f22049c2c7e', name: 'ART', decimals: 18 },
