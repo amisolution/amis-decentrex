@@ -1188,12 +1188,13 @@ module.exports = (config) => {
 /* eslint-env browser */
 
 module.exports = {
-  homeURL: 'https://decentrex.com',
-  contractDecentrEx: 'smart_contract/decentrex.sol',
+  homeURL: 'https://amisolution/github.io/amis-decentrex',
+  contractDecentrEx: 'smart_contract/etherdelta.sol',
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
-    { addr: '0xbf29685856fae1e228878dfb35b280c0adcc3b05', info: 'Deployed 05/26/2017' },
+      { addr: '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819', info: 'Etherdelta contract' },
+    { addr: '0xbf29685856fae1e228878dfb35b280c0adcc3b05', info: 'Deployed 05/26/2017' }
   ],
   ethTestnet: false,
   ethProvider: 'http://localhost:8545',
@@ -1206,11 +1207,11 @@ module.exports = {
   gasTrade: 250000,
   gasOrder: 250000,
   ordersOnchain: false,
-  apiServer: 'https://api.decentrex.com',
-  userCookie: 'DecentrEx',
-  eventsCacheCookie: 'DecentrEx_eventsCache',
-  deadOrdersCacheCookie: 'DecentrEx_deadOrdersCache',
-  ordersCacheCookie: 'DecentrEx_ordersCache',
+  apiServer: 'https://api.EtherDelta.com',
+  userCookie: 'EtherDelta',
+  eventsCacheCookie: 'EtherDelta_eventsCache',
+  deadOrdersCacheCookie: 'EtherDelta_deadOrdersCache',
+  ordersCacheCookie: 'EtherDelta_ordersCache',
   etherscanAPIKey: 'KF9ADFTHP4WJF1GV3WHJZCTFZIN5XZUXG1',
      tokens: [
    { addr: '0x0000000000000000000000000000000000000000', name: 'ETH', decimals: 18 },
@@ -1636,7 +1637,7 @@ module.exports = {
 
 module.exports = {
   homeURL: 'http://localhost:8080',
-  contractDecentrEx: 'smart_contract/decentrex.sol',
+  contractDecentrEx: 'smart_contract/etherdelta.sol',
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
@@ -1654,10 +1655,10 @@ module.exports = {
   gasOrder: 250000,
   ordersOnchain: false,
   apiServer: 'http://localhost:3000',
-  userCookie: 'DecentrEx',
-  eventsCacheCookie: 'DecentrEx_eventsCache',
-  deadOrdersCacheCookie: 'DecentrEx_deadOrdersCache',
-  ordersCacheCookie: 'DecentrEx_ordersCache',
+  userCookie: 'EtherDelta',
+  eventsCacheCookie: 'EtherDelta_eventsCache',
+  deadOrdersCacheCookie: 'EtherDelta_deadOrdersCache',
+  ordersCacheCookie: 'EtherDelta_ordersCache',
   etherscanAPIKey: 'GCGR1C9I17TYIRNYUDDEIJH1K5BRPH4UDE',
   tokens: [
 { addr: '0x0000000000000000000000000000000000000000', name: 'ETH', decimals: 18 },
@@ -1667,6 +1668,7 @@ module.exports = {
 { addr: '0x4470bb87d77b963a013db939be332f927f2b992e', name: 'ADX', decimals: 4 },
 { addr: '0x5ca9a71b1d01849c0a95490cc00559717fcf0d1d', name: 'AE', decimals: 18 },
 { addr: '0xa2f4fcb0fde2dd59f7a1873e121bc5623e3164eb', name: 'AIRA', decimals: 0 },
+{ addr: '0x949bed886c739f1A3273629b3320db0C5024c719', name: 'AMIS', decimals: 9 },
 { addr: '0x960b236a07cf122663c4303350609a66a7b288c0', name: 'ANT', decimals: 18 },
 { addr: '0xac709fcb44a43c35f0da4e3163b117a17f3770f5', name: 'ARC', decimals: 18 },
 { addr: '0xfec0cf7fe078a500abf15f1284958f22049c2c7e', name: 'ART', decimals: 18 },
@@ -2206,7 +2208,7 @@ DecentrEx.prototype.txError = function txError(err) {
     if (this.connection.connection === 'RPC') {
       if (balance < 0.005) {
         this.alertError(
-          `You tried to send an Ethereum transaction but there was an error. Your wallet's ETH balance (${balance} ETH) is not enough to cover the gas cost (Ethereum network fee). DecentrEx sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on DecentrEx. The gas has to come directly from your Wallet (DecentrEx has no physical way of paying gas from your deposited ETH).`);
+          `You tried to send an Ethereum transaction but there was an error. Your wallet's ETH balance (${balance} ETH) is not enough to cover the gas cost (Ethereum network fee). AmisDecentrex sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on AmisDecentrex. The gas has to come directly from your Wallet (DecentrEx has no physical way of paying gas from your deposited ETH).`);
         ga('send', {
           hitType: 'event',
           eventCategory: 'Error',
@@ -2239,7 +2241,7 @@ DecentrEx.prototype.txError = function txError(err) {
         });
       } else if (balance < 0.005) {
         this.alertError(
-          `You tried to send an Ethereum transaction but there was an error. Your wallet's ETH balance (${balance} ETH) is not enough to cover the gas cost (Ethereum network fee). DecentrEx sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on DecentrEx. The gas has to come directly from your Wallet (DecentrEx has no physical way of paying gas from your deposited ETH).`);
+          `You tried to send an Ethereum transaction but there was an error. Your wallet's ETH balance (${balance} ETH) is not enough to cover the gas cost (Ethereum network fee). AmisDecentrex sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on AmisDecentrex. The gas has to come directly from your Wallet (AmisDecentrex has no physical way of paying gas from your deposited ETH).`);
         ga('send', {
           hitType: 'event',
           eventCategory: 'Error',
@@ -2247,7 +2249,7 @@ DecentrEx.prototype.txError = function txError(err) {
         });
       } else {
         this.alertError(
-          "You tried to send an Ethereum transaction but there was an error. Make sure you have enough ETH in your wallet to cover the gas cost (Ethereum network fee). DecentrEx sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on DecentrEx. The gas has to come directly from your Wallet (DecentrEx has no physical way of paying gas from your deposited ETH).");
+          "You tried to send an Ethereum transaction but there was an error. Make sure you have enough ETH in your wallet to cover the gas cost (Ethereum network fee). AmisDecentrex sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on AmisDecentrex. The gas has to come directly from your Wallet (AmisDecentrex has no physical way of paying gas from your deposited ETH).");
         ga('send', {
           hitType: 'event',
           eventCategory: 'Error',
@@ -2256,7 +2258,7 @@ DecentrEx.prototype.txError = function txError(err) {
       }
     } else {
       this.alertError(
-        "You tried to send an Ethereum transaction but there was an error. Make sure you have enough ETH in your wallet to cover the gas cost (Ethereum network fee). DecentrEx sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on DecentrEx. The gas has to come directly from your Wallet (DecentrEx has no physical way of paying gas from your deposited ETH).");
+        "You tried to send an Ethereum transaction but there was an error. Make sure you have enough ETH in your wallet to cover the gas cost (Ethereum network fee). AmisDecentrex sends 0.005 ETH with each transaction. This is an overestimate and the excess will get refunded to you. It's a good idea to send more than 0.005 so you can pay for not only this transaction, but also future transactions you do on AmisDecentrex. The gas has to come directly from your Wallet (AmisDecentrex has no physical way of paying gas from your deposited ETH).");
       ga('send', {
         hitType: 'event',
         eventCategory: 'Error',
@@ -4159,7 +4161,7 @@ DecentrEx.prototype.checkContractUpgrade = function checkContractUpgrade() {
       (this.addrs.length === 1 && this.addrs[0].slice(0, 39) !== '0x0000000000000000000000000000000000000'))
   ) {
     this.alertDialog(
-      '<p>DecentrEx has a new smart contract. It is now selected.</p><p>Please use the "Smart Contract" menu to select the old one and withdraw from it.</p><p><a href="javascript:;" class="btn btn-default" onclick="alertify.closeAll(); bundle.DecentrEx.displayHelp(\'smartContract\')">Smart contract changelog</a></p>');
+      '<p>AmisDecentrex has a new smart contract. It is now selected.</p><p>Please use the "Smart Contract" menu to select the old one and withdraw from it.</p><p><a href="javascript:;" class="btn btn-default" onclick="alertify.closeAll(); bundle.DecentrEx.displayHelp(\'smartContract\')">Smart contract changelog</a></p>');
   }
 };
 DecentrEx.prototype.resetCaches = function resetCaches() {
@@ -102155,17 +102157,17 @@ module.exports = {
     es: 'Español',
   },
   title: {
-    en: 'DecentrEx',
-    cn: 'DecentrEx',
-    fr: 'DecentrEx',
-    es: 'DecentrEx',
+    en: 'AmisDecentrex',
+    cn: 'AmisDecentrex',
+    fr: 'AmisDecentrex',
+    es: 'AmisDecentrex',
   },
   description: {
-    en: 'DecentrEx is a decentralized exchange for Ethereum tokens.',
-    cn: 'DecentrEx是去中心化的以太坊交易平台。',
-    fr: "DecentrEx est une bourse d'échange de jetons ethereum décentralisé.",
-    es: 'DecentrEx se ha posicionado como la primera bolsa de cambio de cryptomonedas y symbolicos de la blockchain Ethereum.',
-    // cn:'DecentrEx是无中心的以太坊交易平台。'
+    en: 'AmisDecentrex is a decentralized exchange for Ethereum tokens.',
+    cn: 'AmisDecentrex是去中心化的以太坊交易平台。',
+    fr: "AmisDecentrex est une bourse d'échange de jetons ethereum décentralisé.",
+    es: 'AmisDecentrex se ha posicionado como la primera bolsa de cambio de cryptomonedas y symbolicos de la blockchain Ethereum.',
+    // cn:'AmisDecentrex是无中心的以太坊交易平台。'
   },
   Smart_Contract: {
     en: 'Smart Contract',
@@ -102234,10 +102236,10 @@ module.exports = {
     es: 'Profundidad',
   },
   only_7_days: {
-    en: 'Note: DecentrEx will only show recent transactions.',
-    cn: '注意：DecentrEx只会显示最近的交易。',
-    fr: 'Remarque: DecentrEx affichera uniquement les transactions récentes.',
-    es: 'Nota: DecentrEx sólo mostrará transacciones recientes.',
+    en: 'Note: AmisDecentrex will only show recent transactions.',
+    cn: '注意：AmisDecentrex只会显示最近的交易。',
+    fr: 'Remarque: AmisDecentrex affichera uniquement les transactions récentes.',
+    es: 'Nota: AmisDecentrex sólo mostrará transacciones recientes.',
   },
 
   announcements: {
@@ -102299,11 +102301,11 @@ module.exports = {
     es: 'Producido por Etherboost',
   },
   decentrex_desc: {
-    en: 'DecentrEx &#8212; decentralized token exchange',
-    cn: 'DecentrEx &#8212; 去中心化交易',
-    // cn:'DecentrEx &#8212; 无中心交易'
-    fr: 'DecentrEx &#8212; échange de jetons décentralisé',
-    es: 'DecentrEx &#8212; échange de jetons décentralisé',
+    en: 'AmisDecentrex &#8212; decentralized token exchange',
+    cn: 'AmisDecentrex &#8212; 去中心化交易',
+    // cn:'AmisDecentrex &#8212; 无中心交易'
+    fr: 'AmisDecentrex &#8212; échange de jetons décentralisé',
+    es: 'AmisDecentrex &#8212; échange de jetons décentralisé',
   },
   etheropt_desc: {
     en: 'EtherOpt &#8212; decentralized options exchange',
@@ -102491,10 +102493,10 @@ module.exports = {
     es: '3 Agosto, 2016',
   },
   aug032016_announcement: {
-    en: 'DecentrEx has moved to a new smart contract. Go to the bottom of the page and switch to the old one if you have a balance there you need to withdraw.',
-    cn: 'DecentrEx更新了智能合约。如果你要提取余额，请到本页底部转成旧的合约并进行提取。',
-    // cn:'DecentrEx迁移到了新的智能合约。如果你要提取余额，请到本页底部转成旧的。'
-    fr: "DecentrEx a ete modifié pour un nouveau smart contract. Allez au bas de page et permutez le avec l'ancien s'il reste du solde à retirer.",
+    en: 'AmisDecentrex has moved to a new smart contract. Go to the bottom of the page and switch to the old one if you have a balance there you need to withdraw.',
+    cn: 'AmisDecentrex更新了智能合约。如果你要提取余额，请到本页底部转成旧的合约并进行提取。',
+    // cn:'AmisDecentrex迁移到了新的智能合约。如果你要提取余额，请到本页底部转成旧的。'
+    fr: "AmisDecentrex a ete modifié pour un nouveau smart contract. Allez au bas de page et permutez le avec l'ancien s'il reste du solde à retirer.",
   },
   aug302016: {
     en: 'August 30, 2016',
@@ -102503,11 +102505,11 @@ module.exports = {
     es: '30 Agosto 2016',
   },
   aug302016_announcement: {
-    en: 'DecentrEx has moved to a new smart contract. Go to the bottom of the page and switch to the old one if you have a balance there you need to withdraw.',
-    cn: 'DecentrEx更新了智能合约。如果你要提取余额，请到本页底部转成旧的合约并进行提取。',
-    // cn:'DecentrEx迁移到了新的智能合约。如果你要提取余额，请到本页底部转成旧的。'
-    fr: "DecentrEx utilise un nouveau smart contract. Allez au bas de page et permutez le avec l'ancien s'il vous reste du solde à retirer.",
-    es: 'DecentrEx utiliza un nuevo contrato inteligente.',
+    en: 'AmisDecentrex has moved to a new smart contract. Go to the bottom of the page and switch to the old one if you have a balance there you need to withdraw.',
+    cn: 'AmisDecentrex更新了智能合约。如果你要提取余额，请到本页底部转成旧的合约并进行提取。',
+    // cn:'AmisDecentrex迁移到了新的智能合约。如果你要提取余额，请到本页底部转成旧的。'
+    fr: "AmisDecentrex utilise un nouveau smart contract. Allez au bas de page et permutez le avec l'ancien s'il vous reste du solde à retirer.",
+    es: 'AmisDecentrex utiliza un nuevo contrato inteligente.',
   },
   new_account: {
     en: 'New account',
@@ -102570,10 +102572,10 @@ module.exports = {
     es: 'Cartera',
   },
   balance_decentrex: {
-    en: 'DecentrEx',
-    cn: 'DecentrEx',
-    fr: 'DecentrEx',
-    es: 'DecentrEx',
+    en: 'AmisDecentrex',
+    cn: 'AmisDecentrex',
+    fr: 'AmisDecentrex',
+    es: 'AmisDecentrex',
   },
   amount: {
     en: 'Amount',
@@ -102757,9 +102759,9 @@ module.exports = {
     es: 'Arriba a la izquierda, hay dos menús desplegables para usar para seleccionar el par de divisas para intercambiar.',
   },
   deposit_withdraw_2: {
-    en: 'Under "Balances," you will see your balance for each of the two currencies you selected. This is the balance you have deposited to DecentrEx from your Ethereum account.',
+    en: 'Under "Balances," you will see your balance for each of the two currencies you selected. This is the balance you have deposited to AmisDecentrex from your Ethereum account.',
     cn: '在“余额”下面，你可以看到两种币的各自的余额，这是从你的以太坊账号充值的余额。',
-    fr: 'Sous "Soldes" vous trouverez le solde pour chacune des deux devises selectionnées. C\'est le solde que vous venez de déposer sur decentrex depuis votre compte Ethereum',
+    fr: 'Sous "Soldes" vous trouverez le solde pour chacune des deux devises selectionnées. C\'est le solde que vous venez de déposer sur AmisDecentrex depuis votre compte Ethereum',
     es: 'En "Saldos" se encuentra el equilibrio para cada una de las dos monedas sélectionnées.',
   },
   deposit_withdraw_3: {
@@ -102769,10 +102771,10 @@ module.exports = {
     es: 'Para depositar, retirar o transferencia, por favor Desplazamiento en la parte inferior de la página. Busque la sección "Ventas.',
   },
   deposit_withdraw_4: {
-    en: 'To deposit, click the "Deposit" tab, pick a token, enter an amount you would like to deposit from your Ethereum account into DecentrEx, and click "Deposit."',
-    cn: '充值点“充值”，选择一种币，输入从以太坊账号进入DecentrEx的充值数量，再点“充值”。',
-    fr: 'Pour déposer, cliquer sur "Deposit" tab, choisir un jeton, entrer le montant à déposer depuis votre compte Ethereum vers Decentrex, puis cliquer "Deposit".',
-    es: 'Para abonar, haga clic en la pestaña "depósito", elegir un modo, ingrese la cantidad a depositar desde su cuenta a Etereum Decentrex y haga clic en "depósito.',
+    en: 'To deposit, click the "Deposit" tab, pick a token, enter an amount you would like to deposit from your Ethereum account into AmisDecentrex, and click "Deposit."',
+    cn: '充值点“充值”，选择一种币，输入从以太坊账号进入AmisDecentrex的充值数量，再点“充值”。',
+    fr: 'Pour déposer, cliquer sur "Deposit" tab, choisir un jeton, entrer le montant à déposer depuis votre compte Ethereum vers AmisDecentrex, puis cliquer "Deposit".',
+    es: 'Para abonar, haga clic en la pestaña "depósito", elegir un modo, ingrese la cantidad a depositar desde su cuenta a Etereum AmisDecentrex y haga clic en "depósito.',
   },
   deposit_withdraw_5: {
     en: 'To withdraw, use the "Withdraw" tab.',
@@ -102805,10 +102807,10 @@ module.exports = {
     es: 'Es posible que el comercio un símbolo que no aparece en la lista, seleccione "Otros" y rellena los campos del formulario. Differentes simbolicos tienen differentes multiplicadores, es pues indispensable cumplir el formulario con cuidado.',
   },
   trade_3: {
-    en: 'DecentrEx supports resting orders (adding liquidity) and trading against existing resting orders (taking liquidity).',
-    cn: 'DecentrEx支持“待定下单”（resting order）来增加流动性，以及交易“待定下单”来减少流动性。',
-    fr: "DecentrEx supportes les ordres restant (l'ajout de liquidite) et marchander contre des ordres restant (prise de liquidite).",
-    es: 'DecentrEx apoya descansando órdenes tales como la adición de liquidez y el comercio contre órdenes existentes como descansando Tomando liquidez..',
+    en: 'AmisDecentrex supports resting orders (adding liquidity) and trading against existing resting orders (taking liquidity).',
+    cn: 'AmisDecentrex支持“待定下单”（resting order）来增加流动性，以及交易“待定下单”来减少流动性。',
+    fr: "AmisDecentrex supportes les ordres restant (l'ajout de liquidite) et marchander contre des ordres restant (prise de liquidite).",
+    es: 'AmisDecentrex apoya descansando órdenes tales como la adición de liquidez y el comercio contre órdenes existentes como descansando Tomando liquidez..',
   },
   trade_4: {
     en: 'To create a resting order, fill out the "Buy" or "Sell" form at the top of the page. The order expires in the number of blocks you specify (1 block &#8776; 15 seconds).',
@@ -102823,10 +102825,10 @@ module.exports = {
     es: 'Si desea cancelar su pedido, simplemente haga clic en su pedido aparecerá en el libro de órdenes y pulse el botón "Cancelar". Esto enviará una transacción Ethereum, una vez confirmada, canceló la orden. Cabe señalar que induce un coste de gas (Tarifas de transacción Ethereum), mientras que la colocación de un pedido restante hasta su expiración no cuesta de gas.',
   },
   trade_6: {
-    en: 'When you submit a resting order, it gets broadcast to the world. The current broadcast channel is a Gitter chat room, but DecentrEx also supports using Ethereum events as a fallback broadcast mechanism.',
-    cn: '但你提交了一个“待定下单”后，它会广播到全球。现在的传播渠道是Gitter聊天室，但是DecentrEx也支持以太坊事件机制，用来保底。',
-    fr: "Quand vous soumettez un ordre restant, il se diffuse dans le monde entier. Le canal de causerie principal s'appele Gitter chat room, mais Decentrex supporte egalement des evenements ethereum en tant que moyen de diffusion alternative.",
-    es: 'Cuando se envía una orden de reposo, que se transmitió al mundo. El canal de difusión actual es una sala de chat Gitter, Decentrex también promueve eventos Ethereum como un medio alternativo de distribución.',
+    en: 'When you submit a resting order, it gets broadcast to the world. The current broadcast channel is a Gitter chat room, but AmisDecentrex also supports using Ethereum events as a fallback broadcast mechanism.',
+    cn: '但你提交了一个“待定下单”后，它会广播到全球。现在的传播渠道是Gitter聊天室，但是AmisDecentrex也支持以太坊事件机制，用来保底。',
+    fr: "Quand vous soumettez un ordre restant, il se diffuse dans le monde entier. Le canal de causerie principal s'appele Gitter chat room, mais AmisDecentrex supporte egalement des evenements ethereum en tant que moyen de diffusion alternative.",
+    es: 'Cuando se envía una orden de reposo, que se transmitió al mundo. El canal de difusión actual es una sala de chat Gitter, AmisDecentrex también promueve eventos Ethereum como un medio alternativo de distribución.',
   },
   trade_7: {
     en: 'The GUI scans for new orders being broadcast and displays them in the order book (offers on the left, bids on the right).',
@@ -102835,10 +102837,10 @@ module.exports = {
     es: 'La interfaz gráfica de usuario detecta nuevos pedidos recibidos y que se muestran en el libro de orden (izquierda venta, compra derecha).',
   },
   trade_8: {
-    en: 'A resting order represents a cryptographically signed intent to trade. Up until your order expires or is cancelled, anyone who has seen it can trade against it, assuming both traders have enough funds in their DecentrEx accounts. The GUI filters out orders that do not have funds to back them up. Partial fills are supported.',
+    en: 'A resting order represents a cryptographically signed intent to trade. Up until your order expires or is cancelled, anyone who has seen it can trade against it, assuming both traders have enough funds in their AmisDecentrex accounts. The GUI filters out orders that do not have funds to back them up. Partial fills are supported.',
     cn: '“待定下单”代表加密签名过的交易意向。在你的订单过期或取消以前，看见这个订单的任何人可以与它交易（前提是双方账号中有足够的币）。页面会过滤掉币的数量不够的订单。订单也可以部分成交。',
-    fr: "Un ordre restant represente une intention de commercer cryptographiquement signée. Jusqu'à ce que votre commande expire ou soit annulée, quiconque l'a vu peut échanger contre elle, en supposant que les deux commerçants disposent de suffisamment de fonds dans leurs comptes DecentrEx. Le remplissage partiel de l'ordre est egalement supporte.",
-    es: 'Una orden restante representa intención de negociar, firmado criptográficamente. Hasta que el pedido se cancela o expira, cualquiera puede intercambiar sierra en contra de ella, suponiendo que ambos operadores tienen fondos suficientes en sus cuentas DecentrEx. También se admite el llenado parcial de la orden.',
+    fr: "Un ordre restant represente une intention de commercer cryptographiquement signée. Jusqu'à ce que votre commande expire ou soit annulée, quiconque l'a vu peut échanger contre elle, en supposant que les deux commerçants disposent de suffisamment de fonds dans leurs comptes AmisDecentrex. Le remplissage partiel de l'ordre est egalement supporte.",
+    es: 'Una orden restante representa intención de negociar, firmado criptográficamente. Hasta que el pedido se cancela o expira, cualquiera puede intercambiar sierra en contra de ella, suponiendo que ambos operadores tienen fondos suficientes en sus cuentas AmisDecentrex. También se admite el llenado parcial de la orden.',
   },
   trade_9: {
     en: 'To trade against an existing resting order, click "Buy" or "Sell" next to it in the order book and type in the volume you want to trade. The GUI will do one last check that the trade can cross (the funds are there and the order hasn\'t already traded), but if someone submits a transaction right before you do, your Ethereum transaction will fail because the order already traded.',
