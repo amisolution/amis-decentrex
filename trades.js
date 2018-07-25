@@ -10,7 +10,7 @@ const SolidityEvent = require('web3/lib/web3/event.js');
 const stats = require('stats-lite');
 
 const addressDecentrEx = '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819';
-const addressToken = '0xAf30D2a7E90d7DC361c8C4585e9BB7D2F6f15bc7';
+const addressToken = '0x949bEd886c739f1A3273629b3320db0C5024c719';
 
 const web3 = new Web3();
 const provider = 'http://localhost:8545';
