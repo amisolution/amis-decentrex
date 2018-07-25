@@ -1188,7 +1188,7 @@ module.exports = (config) => {
 /* eslint-env browser */
 
 module.exports = {
-  homeURL: 'https://amisolution/github.io/amis-decentrex',
+  homeURL: 'https://amisolution.github.io/amis-decentrex',
   contractDecentrEx: 'smart_contract/etherdelta.sol',
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
