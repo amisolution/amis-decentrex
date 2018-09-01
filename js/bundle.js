@@ -1197,7 +1197,7 @@ module.exports = {
       { addr: '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819', info: 'Etherdelta contract' }
     
   ],
-  ethTestnet: false,
+  ethTestnet: true,
   ethProvider: 'http://localhost:8545',
   ethGasPrice: 20000000000,
   ethAddr: '0x0000000000000000000000000000000000000000',
@@ -1222,6 +1222,7 @@ module.exports = {
   { addr: '0x4470bb87d77b963a013db939be332f927f2b992e', name: 'ADX', decimals: 4 },
   { addr: '0x5ca9a71b1d01849c0a95490cc00559717fcf0d1d', name: 'AE', decimals: 18 },
   { addr: '0xa2f4fcb0fde2dd59f7a1873e121bc5623e3164eb', name: 'AIRA', decimals: 0 },
+  { addr: '0x949bed886c739f1a3273629b3320db0c5024c719', name: 'AMIS', decimals: 9 },
   { addr: '0x960b236a07cf122663c4303350609a66a7b288c0', name: 'ANT', decimals: 18 },
   { addr: '0xac709fcb44a43c35f0da4e3163b117a17f3770f5', name: 'ARC', decimals: 18 },
   { addr: '0xfec0cf7fe078a500abf15f1284958f22049c2c7e', name: 'ART', decimals: 18 },
@@ -1423,7 +1424,7 @@ module.exports = {
   { addr: '0xe41d2489571d322189246dafa5ebde1f4699f498', name: 'ZRX', decimals: 18 }
 
   ],
-  defaultPair: { token: '1ST', base: 'ETH' },
+  defaultPair: { token: 'AMIS', base: 'ETH' },
   pairs: [
   { token: '1ST', base: 'ETH' },
   { token: 'ADST', base: 'ETH' },
@@ -1431,6 +1432,7 @@ module.exports = {
   { token: 'ADX', base: 'ETH' },
   { token: 'AE', base: 'ETH' },
   { token: 'AIRA', base: 'ETH' },
+  { token: 'AMIS', base: 'ETH' },
   { token: 'ANT', base: 'ETH' },
   { token: 'ARC', base: 'ETH' },
   { token: 'ART', base: 'ETH' },
@@ -1642,7 +1644,7 @@ module.exports = {
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
-    { addr: '0x0000000000000000000000000000000000000000', info: 'Zero contract' },
+    { addr: '0x228344536a03c0910fb8be9c2755c1a0ba6f89e1', info: 'ED Testnet contract' },
   ],
   ethTestnet: 'ropsten',
   ethProvider: 'http://localhost:8545',
@@ -1654,7 +1656,7 @@ module.exports = {
   gasWithdraw: 250000,
   gasTrade: 250000,
   gasOrder: 250000,
-  ordersOnchain: false,
+  ordersOnchain: true,
   apiServer: 'http://localhost:3000',
   userCookie: 'EtherDelta',
   eventsCacheCookie: 'EtherDelta_eventsCache',
@@ -1871,7 +1873,7 @@ module.exports = {
 { addr: '0xe41d2489571d322189246dafa5ebde1f4699f498', name: 'ZRX', decimals: 18 }
 
   ],
-  defaultPair: { token: '1ST', base: 'ETH' },
+  defaultPair: { token: 'AMIS', base: 'ETH' },
   pairs: [
 { token: '1ST', base: 'ETH' },
 { token: 'ADST', base: 'ETH' },
@@ -1879,6 +1881,7 @@ module.exports = {
 { token: 'ADX', base: 'ETH' },
 { token: 'AE', base: 'ETH' },
 { token: 'AIRA', base: 'ETH' },
+{ token: 'AMIS', base: 'ETH' },
 { token: 'ANT', base: 'ETH' },
 { token: 'ARC', base: 'ETH' },
 { token: 'ART', base: 'ETH' },

@@ -9,7 +9,7 @@ const sha3 = require('web3/lib/utils/sha3.js');
 const SolidityEvent = require('web3/lib/web3/event.js');
 const stats = require('stats-lite');
 
-const addressDecentrEx = '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819';
+const addressDecentrEx = '0xbf29685856fae1e228878dfb35b280c0adcc3b05';
 const addressToken = '0x949bEd886c739f1A3273629b3320db0C5024c719';
 
 const web3 = new Web3();

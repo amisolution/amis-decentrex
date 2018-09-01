@@ -48,7 +48,7 @@ function DecentrEx() {
   this.pendingTransactions = [];
   this.defaultdecimals = new BigNumber(1000000000000000000);
   this.language = 'en';
-  this.minOrderSize = 0.01;
+  this.minOrderSize = 0.001;
   this.messageToSend = undefined;
   this.translator = undefined;
   this.secondsPerBlock = 15;
