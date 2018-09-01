@@ -1197,7 +1197,7 @@ module.exports = {
       { addr: '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819', info: 'Etherdelta contract' }
     
   ],
-  ethTestnet: true,
+  ethTestnet: false,
   ethProvider: 'http://localhost:8545',
   ethGasPrice: 20000000000,
   ethAddr: '0x0000000000000000000000000000000000000000',

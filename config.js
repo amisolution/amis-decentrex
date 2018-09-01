@@ -7,8 +7,9 @@ module.exports = {
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
     { addr: '0xbf29685856fae1e228878dfb35b280c0adcc3b05', info: 'Deployed 05/26/2017' },
+    { addr: '0x228344536a03c0910fb8be9c2755c1a0ba6f89e1', info: 'ED Testnet ropsten Deployed 02/26/2017' },
   ],
-  ethTestnet: false,
+  ethTestnet: 'false',
   ethProvider: 'http://localhost:8545',
   ethGasPrice: 20000000000,
   ethAddr: '0x0000000000000000000000000000000000000000',
