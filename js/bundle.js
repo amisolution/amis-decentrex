@@ -1189,15 +1189,16 @@ module.exports = (config) => {
 
 module.exports = {
   homeURL: 'https://amisolution.github.io/amis-decentrex',
-  contractDecentrEx: 'smart_contract/etherdelta.sol',
+  contractDecentrEx: 'smart_contract/decentrex.sol',
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
       { addr: '0xbf29685856fae1e228878dfb35b280c0adcc3b05', info: 'Deployed 05/26/2017' },
-      { addr: '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819', info: 'Etherdelta contract' }
+      { addr: '0x8d12a197cb00d4747a1fe03395095ce2a5cc6819', info: 'Etherdelta contract' },
+      { addr: '0x228344536a03c0910fb8be9c2755c1a0ba6f89e1', info: 'ED Testnet contract' },
     
   ],
-  ethTestnet: false,
+  ethTestnet: 'ropsten',
   ethProvider: 'http://localhost:8545',
   ethGasPrice: 20000000000,
   ethAddr: '0x0000000000000000000000000000000000000000',
@@ -1640,7 +1641,7 @@ module.exports = {
 
 module.exports = {
   homeURL: 'http://localhost:8080',
-  contractDecentrEx: 'smart_contract/etherdelta.sol',
+  contractDecentrEx: 'smart_contract/decentrex.sol',
   contractToken: 'smart_contract/token.sol',
   contractReserveToken: 'smart_contract/reservetoken.sol',
   contractDecentrExAddrs: [
