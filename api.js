@@ -64,7 +64,7 @@ API.init = function init(callback, allContracts, path, provider, configName, loo
     this.ordersCache = {};
     this.usersWithOrdersToUpdate = {};
     this.blockTimeSnapshot = undefined;
-    this.minOrderSize = 0.01;
+    this.minOrderSize = 0.001;
     this.pricesCache = undefined;
     this.nonce = undefined;
 
